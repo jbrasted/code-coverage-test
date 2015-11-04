@@ -1,0 +1,19 @@
+{
+  "name": "code-coverage-test",
+  "description": "code-coverage-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "cover": "rm -rf ./coverage && istanbul cover _mocha -- spec/**/*.js",
+    "jenkinscover": "rm -rf ./coverage && istanbul cover --report cobertura _mocha -- spec/**/*.js",
+    "jenkins": "npm install && npm run jenkinscover",
+    "start": "node .",
+    "test": "mocha --recursive --timeout 5000 spec/**/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3"
+  }
+}
